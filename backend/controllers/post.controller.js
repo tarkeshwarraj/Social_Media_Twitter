@@ -1,6 +1,7 @@
 import User from "../models/user.model.js";
 import Post from '../models/user.model.js'
 import {v2 as cloudinary} from 'cloudinary';
+import PostRoutes from "../routes/post.route.js";
 
 export const createPost = async (req, res) => {
     try{
