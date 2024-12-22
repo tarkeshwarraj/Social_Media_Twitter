@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import authRoutes from "./routes/auth.route.js"; // Import the router
 import userRoutes from "./routes/user.route.js";
 import postRoutes from "./routes/post.route.js"; 
+import notificationRoutes  from "./routes/notification.route.js";  //Import the routes from file
 
 import connectMongoDB from "./db/connectMongoDB.js";
 import cookieParser from "cookie-parser";
@@ -29,9 +30,10 @@ app.get("/", (req, res) => {
     res.send("Server is Ready");
 });
 
-app.use("api/post", postRoutes);  //missing /
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
+app.use("api/post", postRoutes);  //missing /
+app.use("api/notifications", notificationRoutes);  //missing /
 
 
 
